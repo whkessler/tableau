@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            text-align: center;
+            background-image: url('https://media.nationalgeographic.org/assets/photos/000/276/27633.jpg');
+            background-repeat: cover;
+            
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .words{
+            text-shadow: rgb(247, 5, 5) 2px 2px 4px;
+            font-size: 550%;
+            color: whitesmoke;
+        }
+        .words2{
+            text-shadow: rgb(247, 5, 5) 2px 2px 4px;
+            color: whitesmoke;
+        }
+        .words3{
+            background-color:  rgb(247, 5, 5);
+        }
+        .message{
+            color: crimson;
+            text-shadow: black 2px 2px 6px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="words">World COVID-19 Data</h1>
+    <h2 class="words2">Please register and login to receive daily updated data</h2>
+    <h2 class="words2">for world statistics of the Covid-19 virus.</h2>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <h1 class="message">{{message}}</h1>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h1 class="words2" > Register:</h1>
+    <form class="words2" action="/users/register" method="POST">
+        First Name: <input type="text" name="first_name"><br><br>
+        Last Name:  <input type="text" name="last_name"><br><br>
+        Email:<input type="email" name="email"><br><br>
+        Password:<input type="password" name="password"><br><br>
+        Confirm Password:<input type="password" name="confirm_password"><br><br>
+        <input class="words3" type="submit"> 
+    </form>
+    <h1 class="words2">Login:</h1>
+    <form class="words2" action="/login" method="POST">
+        Email:<input type="email" name="email"><br><br>
+        Password:<input type="password" name="password"><br><br>
+        <input class="words3" type="submit">
+    </form>
+</body>
+</html>

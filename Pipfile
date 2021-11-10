@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+pymysql = "*"
+cryptography = "*"
+pandas = "*"
+jupyter = "*"
+seaborn = "*"
+scikit-learn = "*"
+keras = "*"
+tensorflow = "*"
+bcrypt = "*"
+flask-bcrypt = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
